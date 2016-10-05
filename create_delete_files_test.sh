@@ -12,7 +12,7 @@ function get_inode_info()
 }
 
 echo "파일 생성 전 /data(ocfs2 파일 시스템)의 inode 정보"
-get_inode_info()
+get_inode_info
 
 for((idx = 0; idx < $ITERATION; idx++))
 do
@@ -20,10 +20,10 @@ do
 done
 
 echo "파일 생성 후 /data(ocfs2 파일 시스템)의 inode 정보"
-get_inode_info()
+get_inode_info
 
-sleep 5000	# 5s
+sleep 5
 rm -rf $BASE_DIR/*.txt
 
 echo "파일 삭제 후 /data(ocfs2 파일 시스템)의 inode 정보"
-get_inode_info()
+get_inode_info
