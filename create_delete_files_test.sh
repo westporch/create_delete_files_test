@@ -2,8 +2,15 @@
 # Hyun-gwan Seo
 
 BASE_DIR=/data
-ITERATION=100
+ITERATION=$1
 FILE_SIZE=1M
+
+if [ $# -ne 1 ]; then
+    echo "Error: Please specify the iteration count."
+    echo "Usage example: $0 100"
+    exit
+fi
+
 
 function get_inode_info()
 {
